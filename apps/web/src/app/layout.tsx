@@ -1,10 +1,10 @@
 import "./globals.css";
 
-import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@repo/ui/components/ui/toaster";
-import { Footer } from "~/src/components/footer";
-import { Navbar } from "~/src/components/navbar";
 import { type Metadata } from "next";
+
+import { Navbar } from "../components/navbar";
+import { Overlay } from "../components/overlay";
 
 export const metadata: Metadata = {
   title: "Deep Clone",
@@ -17,13 +17,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex h-screen w-full flex-col items-center">
-        <ClerkProvider>
-          <Toaster />
-          <Navbar />
-          {children}
-          <Footer />
-        </ClerkProvider>
+      <body className="flex min-h-screen w-full flex-col items-center">
+        <Overlay />
+        <Toaster />
+        {children}
+        <Navbar />
       </body>
     </html>
   );
