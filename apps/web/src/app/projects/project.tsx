@@ -41,7 +41,7 @@ export function Project({
   );
 }
 
-export function IconLink({
+function IconLink({
   href,
   Icon,
   size = 24,
