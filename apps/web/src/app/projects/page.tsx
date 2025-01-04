@@ -6,47 +6,36 @@ import { useState } from "react";
 
 import { Project } from "./project";
 
-const projects = [
+const projects: Project[] = [
+  {
+    title: "🏄‍♂️ Surf",
+    description: "Equip your browser with AI superpowers",
+    demoAssetUrl: "/demos/surf.mp4",
+    githubUrl: "https://github.com/scottsus/flamethrower",
+    playgroundUrl: "https://github.com/scottsus/flamethrower",
+  },
   {
     title: "🔥 flamethrower",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga earum ipsum odio, cum aperiam illo tempore corporis ducimus in.",
-    demoVideoUrl: "/flamethrower.mp4",
+    description: "Debugging on autopilot with multi-agent LM teams",
+    demoAssetUrl: "/demos/flamethrower.mp4",
     githubUrl: "https://github.com/scottsus/flamethrower",
     playgroundUrl: "https://github.com/scottsus/flamethrower",
   },
   {
-    title: "2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga earum ipsum odio, cum aperiam illo tempore corporis ducimus in.",
-    demoVideoUrl: "/flamethrower.mp4",
+    title: "🦿 Imitation Learning",
+    description: "Teaching a spider to walk using reinforcement learning",
+    demoAssetUrl: "/demos/imitation-learning.gif",
     githubUrl: "https://github.com/scottsus/flamethrower",
     playgroundUrl: "https://github.com/scottsus/flamethrower",
   },
   {
-    title: "3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga earum ipsum odio, cum aperiam illo tempore corporis ducimus in.",
-    demoVideoUrl: "/flamethrower.mp4",
+    title: "🪓 Hatchet",
+    description: "Firefighting safety, reimagined",
+    demoAssetUrl: "/demos/hatchet.gif",
     githubUrl: "https://github.com/scottsus/flamethrower",
     playgroundUrl: "https://github.com/scottsus/flamethrower",
   },
-  {
-    title: "4",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga earum ipsum odio, cum aperiam illo tempore corporis ducimus in.",
-    demoVideoUrl: "/flamethrower.mp4",
-    githubUrl: "https://github.com/scottsus/flamethrower",
-    playgroundUrl: "https://github.com/scottsus/flamethrower",
-  },
-  {
-    title: "5",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fuga earum ipsum odio, cum aperiam illo tempore corporis ducimus in.",
-    demoVideoUrl: "/flamethrower.mp4",
-    githubUrl: "https://github.com/scottsus/flamethrower",
-    playgroundUrl: "https://github.com/scottsus/flamethrower",
-  },
+  // @TODO deep-clone
 ];
 
 export default function ProjectsPage() {
@@ -55,11 +44,11 @@ export default function ProjectsPage() {
 
   return (
     <main className="flex w-3/4 flex-1 items-center justify-center gap-x-4 gap-y-6">
-      <div className="flex flex-col items-center gap-y-4">
+      <div className="flex w-full flex-col items-center gap-y-4">
         <Project
           title={project.title}
           description={project.description}
-          demoVideoUrl={project.demoVideoUrl}
+          demoAssetUrl={project.demoAssetUrl}
           githubUrl={project.githubUrl}
           playgroundUrl={project.playgroundUrl}
         />
