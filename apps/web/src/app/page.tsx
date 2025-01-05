@@ -93,7 +93,7 @@ export default async function HomePage() {
   );
 }
 
-export function Link({
+function Link({
   href,
   children,
   className,

@@ -36,12 +36,13 @@ const projects: Project[] = [
     playgroundUrl: "https://github.com/scottsus/flamethrower",
   },
   // @TODO deep-clone
+  // @TODO spotlight
 ];
 
 export default function ProjectsPage({
   searchParams,
 }: {
-  searchParams: { projectId: string };
+  searchParams: Promise<{ projectId: string }>;
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const project = projects[activeProjectIndex]!;
