@@ -2,7 +2,7 @@
 
 import { cn } from "@repo/ui/lib/utils";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Project } from "./project";
 
@@ -38,9 +38,21 @@ const projects: Project[] = [
   // @TODO deep-clone
 ];
 
-export default function ProjectsPage() {
+export default function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: { projectId: string };
+}) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const project = projects[activeProjectIndex]!;
+
+  useEffect(() => {
+    (async () => {
+      const { projectId } = await searchParams;
+      const initialProject = parseInt(projectId ?? "0");
+      setActiveProjectIndex(initialProject);
+    })();
+  }, [searchParams]);
 
   return (
     <main className="flex w-3/4 flex-1 items-center justify-center gap-x-4 gap-y-6">

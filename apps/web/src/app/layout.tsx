@@ -7,7 +7,7 @@ import { Navbar } from "../components/navbar";
 import { Overlay } from "../components/overlay";
 
 export const metadata: Metadata = {
-  title: "Deep Clone",
+  title: "Scott Susanto",
   description: "Conversational voice cloning",
   icons: [{ rel: "icon", url: "/github.svg" }],
 };
