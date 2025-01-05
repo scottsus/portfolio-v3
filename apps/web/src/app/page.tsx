@@ -2,12 +2,39 @@ import { cn } from "@repo/ui/lib/utils";
 import { FlameIcon, MicIcon, TicketsIcon } from "lucide-react";
 import NextLink from "next/link";
 
+import { SocialIcon } from "../components/social-icon";
+
 export default async function HomePage() {
   return (
     <main className="flex w-11/12 flex-1 flex-col items-center justify-center gap-y-6 text-[#959595] lg:w-1/2 2xl:w-1/4">
-      <h1 className="w-full text-start text-5xl font-semibold text-[#ececec]">
-        Scott Susanto
-      </h1>
+      <div className="flex w-full items-center justify-between">
+        <h1 className="text-start text-3xl font-semibold text-[#ececec] md:text-5xl">
+          Scott Susanto
+        </h1>
+        <div className="flex">
+          <SocialIcon
+            href="https://linkedin.com/in/susantoscott"
+            src="/logos/linkedin.svg"
+            alt="LinkedIn"
+          />
+          <SocialIcon
+            href="https://github.com/scottsus"
+            src="/logos/github.svg"
+            alt="GitHub"
+          />
+          <SocialIcon
+            href="https://huggingface.co/scottsus"
+            src="/logos/huggingface.svg"
+            alt="Huggingface"
+          />
+          <SocialIcon
+            href="https://x.com/susantoscott"
+            src="/logos/x.svg"
+            alt="X"
+          />
+        </div>
+      </div>
+
       <p className="w-full">
         Engineer at AWS Redshift; interested in ML and infra; raised in
         Singapore, based in SF/LA; searching for the hardest problems to solve
@@ -19,7 +46,7 @@ export default async function HomePage() {
         className="w-full"
       >
         <p>
-          At Redshift, our features were among the top highlights of AWS
+          At Amazon Redshift, our features were among the top highlights of AWS
           re:Invent 2024.
         </p>
       </Link>
@@ -57,8 +84,10 @@ export default async function HomePage() {
         </li>
       </ul>
       <p className="w-full">
-        I also was a previous intern at Cofactory, Amazon Aurora, and
-        Sourcegraph.
+        I also was a previous intern at{" "}
+        <Link href="https://cofactory.ai/">Cofactory</Link>,{" "}
+        <Link href="https://aws.amazon.com/rds/aurora/">AWS Aurora</Link>, and{" "}
+        <Link href="https://sourcegraph.com/">Sourcegraph</Link>.
       </p>
     </main>
   );
