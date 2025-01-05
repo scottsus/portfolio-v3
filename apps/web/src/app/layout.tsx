@@ -8,8 +8,8 @@ import { Overlay } from "../components/overlay";
 
 export const metadata: Metadata = {
   title: "Scott Susanto",
-  description: "Conversational voice cloning",
-  icons: [{ rel: "icon", url: "/github.svg" }],
+  description: "Engineer, writer, aspiring startup founder",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
