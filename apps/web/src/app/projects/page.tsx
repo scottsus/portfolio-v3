@@ -111,12 +111,12 @@ export default function ProjectsPage({
 }: {
   searchParams: Promise<{ projectId: string }>;
 }) {
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(-1);
 
   useEffect(() => {
     (async () => {
       const { projectId } = await searchParams;
-      const initialProject = parseInt(projectId ?? "0");
+      const initialProject = parseInt(projectId ?? "-1");
       setActiveProjectIndex(initialProject);
     })();
   }, [searchParams]);

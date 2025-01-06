@@ -1,5 +1,6 @@
 import { cn } from "@repo/ui/lib/utils";
 import { Badge } from "~/src/components/badge";
+import { motion } from "framer-motion";
 import { SparklesIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,15 +47,23 @@ export function Project({
   const isSelected = activeProjectIndex === projectIndex;
 
   return (
-    <div
+    <motion.div
       className={cn(
         "flex size-full flex-col rounded-lg bg-[#1C1C1C] p-4 shadow-md shadow-black/50 transition-all lg:p-5",
         !isSelected
           ? "cursor-pointer brightness-100 hover:brightness-125"
           : "brightness-125",
       )}
-      onClick={() => setActiveProjectIndex(projectIndex)}
+      onClick={() =>
+        setActiveProjectIndex((activeProjectIndex) =>
+          activeProjectIndex === projectIndex ? -1 : projectIndex,
+        )
+      }
+      initial={{ opacity: 0, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 * projectIndex, duration: 0.4 }}
     >
+      {/* add loader */}
       {isSelected && (
         <div
           key="demoAsset"
@@ -150,6 +159,6 @@ export function Project({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

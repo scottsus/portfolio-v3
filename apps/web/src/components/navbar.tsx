@@ -52,17 +52,19 @@ export function Navbar() {
         pathname={pathname}
         underConstruction
       />
+      {false && (
+        <IconLink
+          href="/playground"
+          Icon={TestTubeDiagonalIcon}
+          description="Playground"
+          pathname={pathname}
+          underConstruction
+        />
+      )}
       <IconLink
-        href="/playground"
-        Icon={TestTubeDiagonalIcon}
-        description="Playground"
-        pathname={pathname}
-        underConstruction
-      />
-      <IconLink
-        href="/library"
+        href="/bookshelf"
         Icon={LibraryBigIcon}
-        description="Library"
+        description="Bookshelf"
         pathname={pathname}
         underConstruction
       />

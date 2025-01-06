@@ -9,7 +9,10 @@ import { Overlay } from "../components/overlay";
 export const metadata: Metadata = {
   title: "Scott Susanto",
   description: "Engineer, writer, aspiring startup founder",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [
+    { rel: "icon", url: "/favicon.ico" },
+    { rel: "og:image", url: "/images/scott-avatar.jpeg" },
+  ],
 };
 
 export default function RootLayout({
