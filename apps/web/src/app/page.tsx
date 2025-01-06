@@ -19,7 +19,7 @@ export default async function HomePage() {
           />
           <SocialIcon
             href="https://github.com/scottsus"
-            src="/logos/github.svg"
+            src="/logos/github-colored.svg"
             alt="GitHub"
           />
           <SocialIcon

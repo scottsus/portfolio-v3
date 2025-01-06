@@ -1,42 +1,95 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import {
+  AxeIcon,
+  FlameIcon,
+  FootprintsIcon,
+  MicIcon,
+  MousePointerClickIcon,
+  TicketsIcon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Project } from "./project";
 
 const projects: Project[] = [
   {
-    title: "🏄‍♂️ Surf",
+    icon: {
+      Icon: MousePointerClickIcon,
+      color: "#5A7EFF",
+    },
+    title: "Surf",
     description: "Equip your browser with AI superpowers",
     demoAssetUrl: "/demos/surf.mp4",
-    githubUrl: "https://github.com/scottsus/flamethrower",
+    githubUrl: "https://github.com/scottsus/majordomo",
     playgroundUrl: "https://github.com/scottsus/flamethrower",
+    date: "January 2025 - present",
+    badges: ["turborepo", "vite", "react"],
   },
   {
-    title: "🔥 flamethrower",
+    icon: {
+      Icon: MicIcon,
+      color: "#5A7EFF",
+    },
+    title: "Deep Clone",
+    description: "Speak with the voice of Scott Susanto",
+    demoAssetUrl: "/demos/surf.mp4",
+    githubUrl: "https://github.com/scottsus/deep-clone",
+    playgroundUrl: "https://deep-clone.web.vercel.app",
+    date: "October 2024 - December 2024",
+    badges: ["turborepo", "nextjs", "python", "prisma", "postgres", "docker"],
+  },
+  {
+    icon: {
+      Icon: FlameIcon,
+      color: "#FF6154",
+    },
+    title: "flamethrower",
     description: "Debugging on autopilot with multi-agent LM teams",
     demoAssetUrl: "/demos/flamethrower.mp4",
     githubUrl: "https://github.com/scottsus/flamethrower",
-    playgroundUrl: "https://github.com/scottsus/flamethrower",
+    date: "December 2023 - February 2024",
+    badges: ["python", "poetry"],
   },
   {
-    title: "🦿 Imitation Learning",
+    icon: {
+      Icon: FootprintsIcon,
+      color: "#F06C00",
+    },
+    title: "Imitation Learning",
     description: "Teaching a spider to walk using reinforcement learning",
     demoAssetUrl: "/demos/imitation-learning.gif",
     githubUrl: "https://github.com/scottsus/flamethrower",
-    playgroundUrl: "https://github.com/scottsus/flamethrower",
+    date: "February 2024 - April 2024",
+    badges: ["python", "pytorch"],
   },
   {
-    title: "🪓 Hatchet",
+    icon: {
+      Icon: AxeIcon,
+      color: "#ED7D31",
+    },
+    title: "Hatchet",
     description: "Firefighting safety, reimagined",
     demoAssetUrl: "/demos/hatchet.gif",
-    githubUrl: "https://github.com/scottsus/flamethrower",
-    playgroundUrl: "https://github.com/scottsus/flamethrower",
+    githubUrl: "https://github.com/scottsus/hatchet",
+    playgroundUrl: "https://tryhatchet.com",
+    date: "April 2024 - current",
+    badges: ["swift"],
   },
-  // @TODO deep-clone
-  // @TODO spotlight
+  {
+    icon: {
+      Icon: TicketsIcon,
+      color: "#4A20FD",
+    },
+    title: "Spotlight",
+    description: "Honey for sports and concert tickets",
+    demoAssetUrl: "/demos/hatchet.gif",
+    githubUrl: "https://github.com/scottsus/spotlight-frontend",
+    playgroundUrl:
+      "https://chromewebstore.google.com/detail/spotlight-ticket-price-co/eoiphenpdjlfgnmokccmeiopgoeddboe",
+    date: "October 2022 - May 2023",
+    badges: ["vite", "react", "puppeteer"],
+  },
 ];
 
 export default function ProjectsPage({
@@ -45,7 +98,6 @@ export default function ProjectsPage({
   searchParams: Promise<{ projectId: string }>;
 }) {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const project = projects[activeProjectIndex]!;
 
   useEffect(() => {
     (async () => {
@@ -56,69 +108,18 @@ export default function ProjectsPage({
   }, [searchParams]);
 
   return (
-    <main className="flex w-3/4 flex-1 items-center justify-center gap-x-4 gap-y-6">
+    <main className="scrollbar-hide flex h-screen w-1/2 flex-1 items-center justify-center gap-x-4 gap-y-6 overflow-scroll pb-[15vh] pt-[10vh]">
       <div className="flex w-full flex-col items-center gap-y-4">
-        <Project
-          title={project.title}
-          description={project.description}
-          demoAssetUrl={project.demoAssetUrl}
-          githubUrl={project.githubUrl}
-          playgroundUrl={project.playgroundUrl}
-        />
-
-        <div className="flex gap-x-3">
-          <div
-            className="flex cursor-pointer items-center justify-center rounded-full p-1 text-white opacity-0 transition-all hover:opacity-100"
-            onClick={() =>
-              setActiveProjectIndex(
-                (i) => (i - 1 + projects.length) % projects.length,
-              )
-            }
-          >
-            <ArrowLeftIcon />
-          </div>
-
-          <div className="flex h-[2.5vh] items-center justify-around gap-x-4 rounded-full border-2 border-[#222] bg-[#0f0f0f] p-4">
-            {projects.map((_, index) => (
-              <Dot
-                key={index}
-                index={index}
-                activeIndex={activeProjectIndex}
-                setActiveIndex={setActiveProjectIndex}
-              />
-            ))}
-          </div>
-
-          <div
-            className="flex cursor-pointer items-center justify-center rounded-full p-1 text-white opacity-0 transition-all hover:opacity-100"
-            onClick={() =>
-              setActiveProjectIndex((i) => (i + 1) % projects.length)
-            }
-          >
-            <ArrowRightIcon />
-          </div>
-        </div>
+        {projects.map((project, index) => (
+          <Project
+            key={project.title}
+            project={project}
+            projectIndex={index}
+            activeProjectIndex={activeProjectIndex}
+            setActiveProjectIndex={setActiveProjectIndex}
+          />
+        ))}
       </div>
     </main>
-  );
-}
-
-function Dot({
-  index,
-  activeIndex,
-  setActiveIndex,
-}: {
-  index: number;
-  activeIndex: number;
-  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-}) {
-  return (
-    <div
-      onClick={() => setActiveIndex(index)}
-      className={cn(
-        "flex h-[0.5em] w-[0.5em] cursor-pointer rounded-full transition-all duration-300 ease-in-out",
-        index === activeIndex ? "scale-110 bg-white" : "scale-100 bg-[#222]",
-      )}
-    />
   );
 }

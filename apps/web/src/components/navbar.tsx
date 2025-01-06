@@ -19,7 +19,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="mb-[5vh] flex items-center justify-around rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 text-white md:p-4">
+    <div className="fixed bottom-[5vh] z-[20] flex items-center justify-around rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 text-white md:p-4">
       <IconLink href="/" Icon={HomeIcon} pathname={pathname} />
       <IconLink href="/projects" Icon={PaletteIcon} pathname={pathname} />
       <IconLink
@@ -56,9 +56,8 @@ function IconLink({
       href={href}
       target={blank ? "_blank" : "_self"}
       className={cn(
-        "flex cursor-pointer items-center justify-center rounded-lg bg-transparent p-2 hover:bg-[#222]",
+        "mx-1 flex cursor-pointer items-center justify-center rounded-lg bg-transparent p-2 hover:bg-[#222]",
         pathname === href ? "bg-[#222]" : "",
-        isMobile ? "m-0" : "mx-1",
       )}
     >
       <Icon size={size} />
