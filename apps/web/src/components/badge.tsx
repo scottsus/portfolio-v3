@@ -39,5 +39,5 @@ const badges = [
   { name: "pytorch", src: "/logos/pytorch.svg", color: "#EE4C2C", size: 14 },
   { name: "swift", src: "/logos/swift.svg", color: "#FB3D26" },
   { name: "puppeteer", src: "/logos/puppeteer.svg", color: "#04D49F" },
-  { name: "docker", src: "/logos/docker.svg", color: "#1D63ED", size: 6 },
+  { name: "docker", src: "/logos/docker.svg", color: "#1D63ED" },
 ];

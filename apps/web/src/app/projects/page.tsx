@@ -19,7 +19,10 @@ const projects: Project[] = [
       color: "#5A7EFF",
     },
     title: "Surf",
-    description: "Equip your browser with AI superpowers",
+    short: "Equip your browser with AI superpowers",
+    long: `Surf is a unique take on Claude's computer use via a well-known distribution system - the browser extension.
+    Soon any browser-based workflow can be learned and mastered, and outsourced to Surf.
+    On a side note, first time working with @chrispramana - engineering becomes effortless when you have a great design + ux partner to brainstorm with.`,
     demoAssetUrl: "/demos/surf.mp4",
     githubUrl: "https://github.com/scottsus/majordomo",
     playgroundUrl: "https://github.com/scottsus/flamethrower",
@@ -32,8 +35,10 @@ const projects: Project[] = [
       color: "#5A7EFF",
     },
     title: "Deep Clone",
-    description: "Speak with the voice of Scott Susanto",
-    demoAssetUrl: "/demos/surf.mp4",
+    short: "Speak with the voice of Scott Susanto",
+    long: `An infra masterpiece. Turborepo to combine a Next 15 frontend and a FastAPI backend, glued by a Prisma + Postgres ORM.
+    I trained a voice agent on ElevenLabs then deployed it. Very proud of this one, you should check it out in the link below.`,
+    demoAssetUrl: "/demos/deep-clone.mp4",
     githubUrl: "https://github.com/scottsus/deep-clone",
     playgroundUrl: "https://deep-clone.web.vercel.app",
     date: "October 2024 - December 2024",
@@ -45,7 +50,10 @@ const projects: Project[] = [
       color: "#FF6154",
     },
     title: "flamethrower",
-    description: "Debugging on autopilot with multi-agent LM teams",
+    short: "Debugging on autopilot with multi-agent LM teams",
+    long: `Built this before Cognition released Devin in March 2024 and my favorite project so far. This tested the limits of AI agents in automating the the
+    basic [ Write Code → Run Action → Check Logs → Repeat ] engineering flow. It was difficult to achieve consistent results, but will only benefit from
+    increased intelligence in the near future. Low hanging fruit: Monte Carlo Tree Search?`,
     demoAssetUrl: "/demos/flamethrower.mp4",
     githubUrl: "https://github.com/scottsus/flamethrower",
     date: "December 2023 - February 2024",
@@ -57,7 +65,9 @@ const projects: Project[] = [
       color: "#F06C00",
     },
     title: "Imitation Learning",
-    description: "Teaching a spider to walk using reinforcement learning",
+    short: "Teaching a spider to walk using reinforcement learning",
+    long: `Before openai o1, and while building 🔥 flamethrower, I've always wondered about the feasibility of fine-tuning an LLM on its own correct reasoning
+    chains to reinforce stronger reasoning patterns. This was the first step, which coincided with my interest also in robotics`,
     demoAssetUrl: "/demos/imitation-learning.gif",
     githubUrl: "https://github.com/scottsus/flamethrower",
     date: "February 2024 - April 2024",
@@ -69,7 +79,8 @@ const projects: Project[] = [
       color: "#ED7D31",
     },
     title: "Hatchet",
-    description: "Firefighting safety, reimagined",
+    short: "Firefighting safety, reimagined",
+    long: `Providing firefighter analytics. Project in beta.`,
     demoAssetUrl: "/demos/hatchet.gif",
     githubUrl: "https://github.com/scottsus/hatchet",
     playgroundUrl: "https://tryhatchet.com",
@@ -82,8 +93,11 @@ const projects: Project[] = [
       color: "#4A20FD",
     },
     title: "Spotlight",
-    description: "Honey for sports and concert tickets",
-    demoAssetUrl: "/demos/hatchet.gif",
+    short: "Honey for sports and concert tickets",
+    long: `Built in junior year, Spotlight got thousands of installs, interviewed by Michael Seibel, final round of Z-Fellows with Cory & Baylor, but learned the hard
+    way shipping an app to production requires a strong infra backbone. We were webscraping on demand, leading to: repeated work, skyhigh memory usage, and extremely
+    poor ux. What a junior year experience though.`,
+    demoAssetUrl: "/demos/spotlight.mp4",
     githubUrl: "https://github.com/scottsus/spotlight-frontend",
     playgroundUrl:
       "https://chromewebstore.google.com/detail/spotlight-ticket-price-co/eoiphenpdjlfgnmokccmeiopgoeddboe",
