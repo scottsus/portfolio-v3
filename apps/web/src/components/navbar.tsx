@@ -50,18 +50,21 @@ export function Navbar() {
         Icon={MicroscopeIcon}
         description="Research"
         pathname={pathname}
+        underConstruction
       />
       <IconLink
         href="/playground"
         Icon={TestTubeDiagonalIcon}
         description="Playground"
         pathname={pathname}
+        underConstruction
       />
       <IconLink
         href="/library"
         Icon={LibraryBigIcon}
         description="Library"
         pathname={pathname}
+        underConstruction
       />
       <IconLink
         href="https://docs.google.com/document/d/1Yce8F7U8oqhexGJ2p-hxDdvZAD8q6YmkFh_nvR0YkJM/edit?tab=t.0"
@@ -78,11 +81,13 @@ function IconLink({
   Icon,
   description,
   pathname,
+  underConstruction,
 }: {
   href: string;
   Icon: ComponentType<{ size?: number }>;
   description: string;
   pathname: string;
+  underConstruction?: boolean;
 }) {
   const { isMobile } = useWindowSize();
   const size = isMobile ? 20 : 24;
@@ -98,6 +103,7 @@ function IconLink({
             className={cn(
               "mx-1 flex items-center justify-center rounded-lg bg-transparent p-2 hover:bg-[#222]",
               pathname === href ? "bg-[#222]" : "",
+              underConstruction ? "text-gray-600" : "text-white",
             )}
           >
             <Icon size={size} />
