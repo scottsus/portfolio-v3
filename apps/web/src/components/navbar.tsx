@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/ui/components/ui/";
+} from "@repo/ui/components/ui/tooltip";
 import { cn } from "@repo/ui/lib/utils";
 import {
   DrillIcon,
