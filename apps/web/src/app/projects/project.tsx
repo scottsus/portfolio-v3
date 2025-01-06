@@ -48,7 +48,7 @@ export function Project({
     <AnimatePresence initial={false}>
       <div
         className={cn(
-          "flex size-full rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 transition-all",
+          "flex size-full flex-col rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 transition-all lg:flex-row",
           !isSelected ? "cursor-pointer hover:brightness-125" : "",
         )}
         onClick={() => setActiveProjectIndex(projectIndex)}
@@ -56,7 +56,7 @@ export function Project({
         {isSelected && (
           <div
             key="demoAsset"
-            className="relative mb-3 w-2/5 overflow-hidden rounded-lg"
+            className="relative mb-3 w-full overflow-hidden rounded-lg lg:w-2/5"
           >
             {isVideo ? (
               <>
@@ -95,15 +95,17 @@ export function Project({
           key="description"
           className={cn(
             "flex flex-col items-start p-4",
-            isSelected ? "w-3/5" : "w-full",
+            isSelected ? "lg:w-3/5" : "w-full",
           )}
         >
-          <div className="flex w-full items-center justify-between">
+          <div className="flex w-full flex-col items-start justify-between lg:flex-row lg:items-center">
             <div className="flex items-center">
               <Icon color={color} className="mr-1" />
               <h2 className="text-xl text-white">{title}</h2>
             </div>
-            <p className="text-sm text-[#919191]">{date}</p>
+            <p className="py-1 text-xs text-[#919191] lg:p-0 lg:text-sm">
+              {date}
+            </p>
           </div>
           <p className="text-md my-1 text-[#959595]">{description}</p>
           <div className="scrollbar-hide mx-2 flex w-full items-center gap-x-2 overflow-x-scroll">
@@ -130,7 +132,7 @@ export function Project({
               <div className="mx-auto mt-6 flex gap-x-4 text-white">
                 <Link
                   href={githubUrl}
-                  className="flex items-center gap-x-2 rounded-md border px-10 py-2 transition-all hover:bg-gray-800"
+                  className="flex items-center gap-x-2 rounded-md border px-5 py-1 transition-all hover:bg-gray-800 lg:px-10 lg:py-2"
                   target="_blank"
                 >
                   <Image
@@ -144,7 +146,7 @@ export function Project({
                 {playgroundUrl && (
                   <Link
                     href={githubUrl}
-                    className="flex items-center gap-x-2 rounded-md border px-8 py-2 transition-all hover:bg-gray-800"
+                    className="flex items-center gap-x-2 rounded-md border px-4 py-1 transition-all hover:bg-gray-800 lg:px-8 lg:py-2"
                     target="_blank"
                   >
                     <SparklesIcon />

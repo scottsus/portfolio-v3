@@ -108,7 +108,7 @@ export default function ProjectsPage({
   }, [searchParams]);
 
   return (
-    <main className="scrollbar-hide flex h-screen w-1/2 flex-1 flex-col items-center gap-x-4 gap-y-6 overflow-y-scroll pb-[15vh] pt-[10vh]">
+    <main className="scrollbar-hide flex h-screen w-11/12 flex-1 flex-col items-center gap-x-4 gap-y-6 overflow-y-scroll py-[3vh] pb-[15vh] lg:w-1/2 lg:pt-[10vh]">
       {projects.map((project, index) => (
         <Project
           key={project.title}
