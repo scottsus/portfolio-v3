@@ -48,7 +48,7 @@ export function Project({
     <AnimatePresence initial={false}>
       <div
         className={cn(
-          "flex size-full h-full rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 transition-all",
+          "flex size-full rounded-lg border-2 border-[#222] bg-[#0f0f0f] p-2 transition-all",
           !isSelected ? "cursor-pointer hover:brightness-125" : "",
         )}
         onClick={() => setActiveProjectIndex(projectIndex)}

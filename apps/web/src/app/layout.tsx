@@ -17,7 +17,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex min-h-screen w-full flex-col items-center">
+      <body className="flex h-screen w-full flex-col items-center">
         <Overlay />
         <Toaster />
         {children}

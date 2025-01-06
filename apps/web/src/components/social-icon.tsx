@@ -23,7 +23,7 @@ export function SocialIcon({
       href={href}
       target="_blank"
       className={cn(
-        "mx-[0.35em] brightness-0 invert filter transition-all hover:brightness-100 hover:invert-0",
+        "mx-[0.35em] cursor-pointer brightness-0 invert filter transition-all hover:brightness-100 hover:invert-0",
         isMobile ? "mr-1" : "mr-2",
       )}
     >

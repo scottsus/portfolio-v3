@@ -108,18 +108,16 @@ export default function ProjectsPage({
   }, [searchParams]);
 
   return (
-    <main className="scrollbar-hide flex h-screen w-1/2 flex-1 items-center justify-center gap-x-4 gap-y-6 overflow-scroll pb-[15vh] pt-[10vh]">
-      <div className="flex w-full flex-col items-center gap-y-4">
-        {projects.map((project, index) => (
-          <Project
-            key={project.title}
-            project={project}
-            projectIndex={index}
-            activeProjectIndex={activeProjectIndex}
-            setActiveProjectIndex={setActiveProjectIndex}
-          />
-        ))}
-      </div>
+    <main className="scrollbar-hide flex h-screen w-1/2 flex-1 flex-col items-center gap-x-4 gap-y-6 overflow-y-scroll pb-[15vh] pt-[10vh]">
+      {projects.map((project, index) => (
+        <Project
+          key={project.title}
+          project={project}
+          projectIndex={index}
+          activeProjectIndex={activeProjectIndex}
+          setActiveProjectIndex={setActiveProjectIndex}
+        />
+      ))}
     </main>
   );
 }
