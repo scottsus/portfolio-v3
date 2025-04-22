@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import NextLink from "next/link";
 
 import { SocialIcon } from "../components/social-icon";
+import { Experiences } from "./home/experience";
 
 export default function HomePage() {
   return (
-    <main className="flex w-11/12 flex-1 flex-col items-center gap-y-6 pt-[5vh] text-[#959595] lg:w-1/2 lg:pt-[20vh] 2xl:w-1/3">
+    <main className="flex w-11/12 flex-1 flex-col items-center gap-y-6 pb-[10vh] pt-[10vh] text-[#959595] lg:w-1/2 2xl:w-1/3">
       <AnimatedBlock
         key="name"
         className="mb-4 flex w-full items-center justify-between lg:flex-col lg:items-start lg:gap-y-4"
@@ -43,36 +44,14 @@ export default function HomePage() {
 
       <AnimatedBlock key="aws" delay={0.7}>
         <p className="w-full">
-          Engineer at AWS Redshift; interested in ML and infra; raised in
-          Singapore, based in SF/LA; searching for the hardest problems to solve
-          in our generation.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+          blanditiis provident fugit non vel voluptate aspernatur, repellat
+          fuga. Commodi reprehenderit sint nisi excepturi perferendis ipsam
+          asperiores veniam eveniet eius non?
         </p>
-        <Link
-          href="https://aws.amazon.com/events/aws-reinvent-2024-recap/"
-          className="w-full"
-        >
-          <p>
-            At Amazon Redshift, our features were among the top highlights of
-            AWS re:Invent 2024.
-          </p>
-        </Link>
       </AnimatedBlock>
 
       <AnimatedBlock key="experience" delay={1.3}>
-        <p className="w-full">
-          Combined BS + MS in Computer Engineering & Computer Science from USC
-          Viterbi in 2024, research focus on acquisition of unseen knowledge for
-          instruct-tuned models, enabling them to learn new things without a
-          complete re-pretraining. I also dabbled in robotics and reinforcement
-          learning.
-        </p>
-
-        <p className="w-full">
-          I also interned at <Link href="https://cofactory.ai/">Cofactory</Link>
-          , <Link href="https://aws.amazon.com/rds/aurora/">AWS Aurora</Link>,
-          and <Link href="https://sourcegraph.com/">Sourcegraph</Link>.
-        </p>
-
         <p className="w-full">
           Since you&apos;re here, do check out some cool (nerd){" "}
           <Link href="/projects">
@@ -88,6 +67,11 @@ export default function HomePage() {
           </Link>
           .
         </p>
+      </AnimatedBlock>
+
+      <AnimatedBlock key="experiences" delay={1.6}>
+        <h3 className="text-lg font-semibold text-white">Experiences</h3>
+        <Experiences />
       </AnimatedBlock>
     </main>
   );
@@ -126,7 +110,9 @@ function AnimatedBlock({
 }) {
   return (
     <motion.div
-      className={className === undefined ? "flex flex-col gap-y-6" : className}
+      className={
+        className === undefined ? "flex w-full flex-col gap-y-6" : className
+      }
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.4 }}

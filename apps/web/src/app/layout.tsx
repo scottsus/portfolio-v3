@@ -20,11 +20,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex h-screen w-full flex-col items-center">
+      <body className="flex size-full flex-col items-center">
         <Overlay />
         <Toaster />
         {children}
-        <Navbar />
+        {/* <Navbar /> */}
       </body>
     </html>
   );
