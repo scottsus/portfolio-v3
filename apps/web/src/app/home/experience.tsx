@@ -1,3 +1,4 @@
+import { cn } from "@repo/ui/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,25 +65,42 @@ export function Experiences() {
       filepath: "sourcegraph.svg",
       backgroundColor: "#000",
       company: "Sourcegraph",
-      description: "Golang",
+      description: "Backend Engineering",
       url: "https://sourcegraph.com",
+    },
+    {
+      filepath: "usc.svg",
+      backgroundColor: "#fff",
+      company: "University of Southern California",
+      description: "Computer Engineering & Computer Science",
+      url: "https://viterbischool.usc.edu/",
     },
   ];
 
   return (
-    <div className="flex w-full flex-col items-start gap-y-5">
+    <div className="my-4 flex w-full flex-col items-start gap-y-5">
       {experiences.map((exp, idx) => (
-        <Experience key={idx} experience={exp} />
+        <Experience
+          key={idx}
+          experience={exp}
+          isLast={idx === experiences.length - 1}
+        />
       ))}
     </div>
   );
 }
 
-function Experience({ experience }: { experience: Experience }) {
+function Experience({
+  experience,
+  isLast,
+}: {
+  experience: Experience;
+  isLast: boolean;
+}) {
   const { filepath, backgroundColor, company, description, url } = experience;
 
   return (
-    <div className="flex items-center gap-x-4">
+    <div className={cn("flex items-center gap-x-4", isLast && "mt-8")}>
       <LogoBox
         filepath={filepath}
         backgroundColor={backgroundColor}
@@ -107,9 +125,10 @@ function LogoBox({
 }) {
   return (
     <Link
+      href={url}
+      target="_blank"
       className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center rounded-md p-2 transition-all duration-300 hover:brightness-125"
       style={{ backgroundColor }}
-      href={url}
     >
       <Image
         src={`/logos/${filepath}`}

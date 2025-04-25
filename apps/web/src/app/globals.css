@@ -61,7 +61,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-all duration-300;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
