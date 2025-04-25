@@ -1,7 +1,9 @@
 "use client";
 
+import { Button } from "@repo/ui/components/ui/";
 import { cn } from "@repo/ui/lib/utils";
 import { motion } from "framer-motion";
+import { WandSparklesIcon } from "lucide-react";
 import NextLink from "next/link";
 
 import { SocialIcon } from "../components/social-icon";
@@ -68,7 +70,7 @@ export default function HomePage() {
           <Link href="https://scottsus.substack.com">
             <span>writing</span>
           </Link>{" "}
-          - come dive deep into my world.
+          - come dive deep into my world. Or, stay, and explore some nerd stuff.
         </p>
       </AnimatedBlock>
 
@@ -91,6 +93,21 @@ export default function HomePage() {
           assetUrl="/demos/flamethrower.mp4"
           githubUrl="https://github.com/scottsus/flamethrower"
         />
+        <p>This last one is pretty cool; you can try it out right now 👇</p>
+        <Link
+          href="https://deep-clone-web.vercel.app/scottsus"
+          className="mx-auto mt-1"
+        >
+          <Button
+            variant="secondary"
+            className="font-semibold hover:bg-[#FE8D59] hover:text-white"
+          >
+            <div className="flex items-center gap-x-1">
+              <p>Let&apos;s chat</p>
+              <WandSparklesIcon size={24} />
+            </div>
+          </Button>
+        </Link>
       </AnimatedBlock>
 
       <AnimatedBlock key="machine-learning" delay={1.0}>
