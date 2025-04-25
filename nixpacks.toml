@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ["nodejs", "yarn"]
+
+[phases.install]
+cmds = [
+  "yarn install"
+]
+
+[phases.build]
+cmds = [
+  "chmod +x ./apps/web/generate_prisma_client.sh",
+  "cd apps/web && ./generate_prisma_client.sh && cd ../../",
+  "yarn workspace web build"
+]
+
+[start]
+cmd = "yarn workspace web start"
