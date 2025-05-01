@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { WandSparklesIcon } from "lucide-react";
 import NextLink from "next/link";
 
+import { MagicShadow } from "../components/magic-shadow";
 import { SocialIcon } from "../components/social-icon";
 import { Experiences } from "./home/experience";
 import { Highlight } from "./home/highlight";
@@ -47,14 +48,14 @@ export default function HomePage() {
         </div>
       </AnimatedBlock>
 
-      <AnimatedBlock key="just" delay={0.3}>
+      <AnimatedBlock key="just" delay={0.4}>
         <p className="w-full">
           Just another engineer building AI agents good enough to replace
           myself.
         </p>
       </AnimatedBlock>
 
-      <AnimatedBlock key="intersection" delay={0.4}>
+      <AnimatedBlock key="intersection" delay={0.6}>
         <p>
           Deeply care about the intersection between AI engineering and ML
           research. Set on building browser agents that can navigate the AWS
@@ -63,7 +64,7 @@ export default function HomePage() {
         </p>
       </AnimatedBlock>
 
-      <AnimatedBlock key="experience" delay={0.5}>
+      <AnimatedBlock key="experience" delay={0.8}>
         <p className="w-full">
           If there&apos;s one thing I wanna do without AI, however ironic,
           it&apos;s{" "}
@@ -74,7 +75,7 @@ export default function HomePage() {
         </p>
       </AnimatedBlock>
 
-      <AnimatedBlock key="multimodal" delay={0.8}>
+      <AnimatedBlock key="multimodal" delay={1.0}>
         <Heading text="Multimodal AI" />
         <p>
           A coding agent, browser agent, conversational audio agent - collecting
@@ -98,15 +99,17 @@ export default function HomePage() {
           href="https://deep-clone-web.vercel.app/scottsus"
           className="mx-auto mt-1"
         >
-          <Button
-            variant="secondary"
-            className="font-semibold hover:bg-[#FE8D59] hover:text-white"
-          >
-            <div className="flex items-center gap-x-1">
-              <p>Let&apos;s chat</p>
-              <WandSparklesIcon size={24} />
-            </div>
-          </Button>
+          <MagicShadow>
+            <Button
+              variant="secondary"
+              className="font-semibold hover:bg-white"
+            >
+              <div className="flex items-center gap-x-1">
+                <p>Let&apos;s chat</p>
+                <WandSparklesIcon size={24} />
+              </div>
+            </Button>
+          </MagicShadow>
         </Link>
       </AnimatedBlock>
 

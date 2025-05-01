@@ -40,7 +40,8 @@ export function Highlight({
     <Link
       ref={containerRef}
       href={githubUrl}
-      className="relative flex aspect-[12/7] cursor-pointer flex-col overflow-hidden rounded-lg bg-[#1C1C1C] pl-7 pt-3"
+      target="_blank"
+      className="relative flex aspect-[12/10] cursor-pointer flex-col overflow-hidden rounded-lg bg-[#1C1C1C] pl-7 pt-3 md:aspect-[12/8]"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
