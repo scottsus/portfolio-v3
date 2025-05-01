@@ -61,7 +61,9 @@ export function Highlight({
           className="absolute bottom-0 right-0 h-[95%] w-[95%] rounded-tl-lg object-cover object-center"
           style={{ transformOrigin: "bottom right" }}
           src={assetUrl}
+          preload="auto"
           autoPlay
+          playsInline
           muted
           loop
         />
