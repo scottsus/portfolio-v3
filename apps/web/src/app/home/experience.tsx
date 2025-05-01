@@ -27,7 +27,7 @@ export function Experiences() {
       url: "https://tryhatchet.com",
     },
     {
-      filepath: "xAI.svg",
+      filepath: "x-ai.svg",
       backgroundColor: "#000",
       company: "xAI",
       description: "Grokking Grok",
